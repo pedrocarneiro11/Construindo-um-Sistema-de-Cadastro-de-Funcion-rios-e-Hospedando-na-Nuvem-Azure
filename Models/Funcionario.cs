@@ -29,6 +29,6 @@ namespace pasta_projeto.Models
         public string EmailProfissional { get; set; }
         public string Departamento { get; set; }
         public decimal Salario { get; set; }
-        public DateTime DataAdmissao { get; set; }
+        public DateTimeOffset? DataAdmissao { get; set; }
     }
 }

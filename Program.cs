@@ -1,6 +1,16 @@
+using pasta_projeto.Context;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+// Pega a string da conexao padrao no appsetings.json
+var SAConnectionString = builder.Configuration.GetConnectionString("SAConnectionString");
+
+// Add services to the container.
+
+builder.Services.AddDbContext<RHContext>(options =>
+    options.UseSqlServer(SAConnectionString));
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
